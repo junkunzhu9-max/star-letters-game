@@ -7,9 +7,9 @@
   <meta name="description" content="星间来信，一段穿越星球、学会照顾与告别的非商业 3D 短篇试玩。">
   <title>星间来信 · Star Letters</title>
   <link rel="icon" href="TemplateData/star.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="TemplateData/style.css?v=letter-20261019">
+  <link rel="stylesheet" href="TemplateData/style.css?v=watering-20261019">
 </head>
-<body data-release="letter-20261019">
+<body data-release="watering-20261019">
   <main class="journey">
     <header class="masthead">
       <a class="wordmark" href="./" aria-label="星间来信首页"><span class="mark" aria-hidden="true">✦</span><span>星间来信<small>STAR LETTERS</small></span></a>
@@ -46,7 +46,7 @@
     <p class="mobile-note">这段旅程使用键盘操作。请在电脑浏览器中打开，获得完整体验。</p>
     <div id="story-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
   </main>
-  <script src="TemplateData/audio-controls.js?v=letter-20261019"></script>
+  <script src="TemplateData/audio-controls.js?v=watering-20261019"></script>
   <script>
     const canvas = document.getElementById('unity-canvas');
     const loading = document.getElementById('loading');
@@ -85,9 +85,9 @@
 
     const config = {
       arguments: [],
-      dataUrl: 'Build/45f30a8a4631562bf2572c1328d80187.data.unityweb',
+      dataUrl: 'Build/d08241f3a7fca9b080e976ea11fcacf3.data.unityweb',
       frameworkUrl: 'Build/11c78c80943d0b78fbd116eaedfedd46.framework.js.unityweb',
-      codeUrl: 'Build/7c38bbb554d06cb8f251caece0eef3ec.wasm.unityweb',
+      codeUrl: 'Build/34822e77583abfd261ea8d1145afec37.wasm.unityweb',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: "Local Prototype",
       productName: "Little Island",
@@ -107,7 +107,7 @@
       showError('浏览器未能启用 WebGL 2。请使用新版 Chrome、Edge、Firefox 或 Safari，并在浏览器设置中开启硬件加速。');
     } else {
       const script = document.createElement('script');
-      script.src = 'Build/3b87e00b86a76a9b8aba2c6e3bb4c5f6.loader.js';
+      script.src = 'Build/14cd9e17222e589a21012cacd65e206e.loader.js';
       script.onerror = () => showError('未能下载游戏启动文件。请检查网络连接，再重新加载。');
       script.onload = () => {
         createUnityInstance(canvas, config, value => {
