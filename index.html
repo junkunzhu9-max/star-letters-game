@@ -7,9 +7,9 @@
   <meta name="description" content="星间来信，一段穿越星球、学会照顾与告别的非商业 3D 短篇试玩。">
   <title>星间来信 · Star Letters</title>
   <link rel="icon" href="TemplateData/star.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="TemplateData/style.css?v=travel-flask-20261019">
+  <link rel="stylesheet" href="TemplateData/style.css?v=quiet-background-20261019">
 </head>
-<body data-release="travel-flask-20261019">
+<body data-release="quiet-background-20261019">
   <main class="journey">
     <header class="masthead">
       <a class="wordmark" href="./" aria-label="星间来信首页"><span class="mark" aria-hidden="true">✦</span><span>星间来信<small>STAR LETTERS</small></span></a>
@@ -34,7 +34,7 @@
         <label class="visually-hidden" for="audio-volume">音量</label>
         <input id="audio-volume" type="range" min="0" max="100" step="1" value="65" aria-label="音量">
         <output id="audio-value" for="audio-volume">65%</output>
-        <span class="audio-hint" id="audio-hint">开始旅程后播放音乐</span>
+        <span class="audio-hint" id="audio-hint">开始旅程后启用对白和音效</span>
       </div>
       <button class="fullscreen" type="button" id="fullscreen" disabled aria-label="全屏游戏" title="全屏">⛶<span>全屏</span></button>
     </section>
@@ -46,7 +46,7 @@
     <p class="mobile-note">这段旅程使用键盘操作。请在电脑浏览器中打开，获得完整体验。</p>
     <div id="story-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
   </main>
-  <script src="TemplateData/audio-controls.js?v=travel-flask-20261019"></script>
+  <script src="TemplateData/audio-controls.js?v=quiet-background-20261019"></script>
   <script>
     const canvas = document.getElementById('unity-canvas');
     const loading = document.getElementById('loading');
@@ -85,9 +85,9 @@
 
     const config = {
       arguments: [],
-      dataUrl: 'Build/f6faf9579bf3697b9db92015f109fe5f.data.unityweb',
+      dataUrl: 'Build/cc7ef966ba9b213810990870c2242d42.data.unityweb',
       frameworkUrl: 'Build/11c78c80943d0b78fbd116eaedfedd46.framework.js.unityweb',
-      codeUrl: 'Build/0a2851f7de5a16eb99a1dd781e97afe3.wasm.unityweb',
+      codeUrl: 'Build/641c33ff2a19c364aa52bedf20a07033.wasm.unityweb',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: "Local Prototype",
       productName: "Little Island",
@@ -107,7 +107,7 @@
       showError('浏览器未能启用 WebGL 2。请使用新版 Chrome、Edge、Firefox 或 Safari，并在浏览器设置中开启硬件加速。');
     } else {
       const script = document.createElement('script');
-      script.src = 'Build/04436d9832e067eb7485974b3f788af7.loader.js';
+      script.src = 'Build/f1c838544c630c49513b8bd91194a217.loader.js';
       script.onerror = () => showError('未能下载游戏启动文件。请检查网络连接，再重新加载。');
       script.onload = () => {
         createUnityInstance(canvas, config, value => {
