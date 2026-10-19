@@ -7,9 +7,9 @@
   <meta name="description" content="星间来信，一段穿越星球、学会照顾与告别的非商业 3D 短篇试玩。">
   <title>星间来信 · Star Letters</title>
   <link rel="icon" href="TemplateData/star.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="TemplateData/style.css">
+  <link rel="stylesheet" href="TemplateData/style.css?v=audio-20261019">
 </head>
-<body>
+<body data-release="audio-20261019">
   <main class="journey">
     <header class="masthead">
       <a class="wordmark" href="./" aria-label="星间来信首页"><span class="mark" aria-hidden="true">✦</span><span>星间来信<small>STAR LETTERS</small></span></a>
@@ -29,6 +29,13 @@
       </div>
       <aside class="notice" id="notice" hidden role="alert"><h2 id="notice-title">暂时无法启程</h2><p id="notice-message"></p><button type="button" id="retry">重新加载</button></aside>
       <div class="focus-hint" id="focus-hint" hidden>点击画面，开始你的旅程</div>
+      <div class="audio-controls" id="audio-controls" hidden role="group" aria-label="声音设置">
+        <button type="button" id="audio-mute" aria-label="静音" aria-pressed="false" title="静音"><span aria-hidden="true">♪</span><span id="audio-label">声音</span></button>
+        <label class="visually-hidden" for="audio-volume">音量</label>
+        <input id="audio-volume" type="range" min="0" max="100" step="1" value="65" aria-label="音量">
+        <output id="audio-value" for="audio-volume">65%</output>
+        <span class="audio-hint" id="audio-hint">开始旅程后播放音乐</span>
+      </div>
       <button class="fullscreen" type="button" id="fullscreen" disabled aria-label="全屏游戏" title="全屏">⛶<span>全屏</span></button>
     </section>
 
@@ -39,6 +46,7 @@
     <p class="mobile-note">这段旅程使用键盘操作。请在电脑浏览器中打开，获得完整体验。</p>
     <div id="story-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
   </main>
+  <script src="TemplateData/audio-controls.js?v=audio-20261019"></script>
   <script>
     const canvas = document.getElementById('unity-canvas');
     const loading = document.getElementById('loading');
@@ -58,6 +66,7 @@
       failed = true;
       loading.hidden = true;
       focusHint.hidden = true;
+      document.getElementById('audio-controls').hidden = true;
       notice.hidden = false;
       noticeTitle.textContent = '暂时无法启程';
       noticeMessage.textContent = message;
@@ -65,6 +74,7 @@
     }
     document.getElementById('retry').addEventListener('click', () => location.reload());
     canvas.addEventListener('pointerdown', () => { canvas.focus(); focusHint.hidden = true; });
+    canvas.addEventListener('focus', () => { focusHint.hidden = true; });
     canvas.addEventListener('blur', () => { if (unityInstance && !failed) focusHint.hidden = false; });
     canvas.addEventListener('keydown', event => {
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(event.key)) event.preventDefault();
@@ -75,9 +85,9 @@
 
     const config = {
       arguments: [],
-      dataUrl: 'Build/5acde993a9074e1e5d1abb7a855f09ab.data.unityweb',
-      frameworkUrl: 'Build/1e5556216212a3ad33319a8d0929b0ca.framework.js.unityweb',
-      codeUrl: 'Build/2b5bc32f4b1b99fdc2ea01c07562e096.wasm.unityweb',
+      dataUrl: 'Build/000576806bb37f77308e820bae3bcb16.data.unityweb',
+      frameworkUrl: 'Build/11c78c80943d0b78fbd116eaedfedd46.framework.js.unityweb',
+      codeUrl: 'Build/3b79b38cd5db3bfa6ca9616b74e69c91.wasm.unityweb',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: "Local Prototype",
       productName: "Little Island",
@@ -97,7 +107,7 @@
       showError('浏览器未能启用 WebGL 2。请使用新版 Chrome、Edge、Firefox 或 Safari，并在浏览器设置中开启硬件加速。');
     } else {
       const script = document.createElement('script');
-      script.src = 'Build/f22928636cd23985395a05b47cfcb24f.loader.js';
+      script.src = 'Build/012bac7e21ca6e1abb3c3c4574975e2a.loader.js';
       script.onerror = () => showError('未能下载游戏启动文件。请检查网络连接，再重新加载。');
       script.onload = () => {
         createUnityInstance(canvas, config, value => {

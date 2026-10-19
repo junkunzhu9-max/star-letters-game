@@ -6,4 +6,5 @@
 
 此仓库仅包含 Unity 导出的网页运行文件，不包含 Unity 或 Blender 源工程。角色素材按 Tripo Free 非商业用途使用。
 中文字体采用 Noto Sans SC，OFL 许可见 TemplateData/NotoOFL.txt。
+音乐、风声、脚步与水声为本项目原创合成音频；右上角可调整音量和静音，设置保存在当前浏览器。
 需要支持 WebGL 2 的浏览器和硬件加速。首次打开需要下载游戏，加载完成后点击画面操作。
