@@ -85,9 +85,9 @@
 
     const config = {
       arguments: [],
-      dataUrl: 'Build/cc7ef966ba9b213810990870c2242d42.data.unityweb',
+      dataUrl: 'Build/bc047f125eb757008246d7d59b22802c.data.unityweb',
       frameworkUrl: 'Build/11c78c80943d0b78fbd116eaedfedd46.framework.js.unityweb',
-      codeUrl: 'Build/641c33ff2a19c364aa52bedf20a07033.wasm.unityweb',
+      codeUrl: 'Build/f654bb6f141c85bfd11d46ac30b93f95.wasm.unityweb',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: "Local Prototype",
       productName: "Little Island",
@@ -107,7 +107,7 @@
       showError('浏览器未能启用 WebGL 2。请使用新版 Chrome、Edge、Firefox 或 Safari，并在浏览器设置中开启硬件加速。');
     } else {
       const script = document.createElement('script');
-      script.src = 'Build/f1c838544c630c49513b8bd91194a217.loader.js';
+      script.src = 'Build/813eb440c819e46ed02a966ecd1c5ecf.loader.js';
       script.onerror = () => showError('未能下载游戏启动文件。请检查网络连接，再重新加载。');
       script.onload = () => {
         createUnityInstance(canvas, config, value => {
